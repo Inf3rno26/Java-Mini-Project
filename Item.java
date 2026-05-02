@@ -4,6 +4,7 @@ public class Item {
     double startPrice;
     double currentBid;
     boolean isSold;
+    String winner = null;   // <-- new field
 
     Item(int itemId, String name, double startPrice) {
         this.itemId = itemId;
@@ -14,7 +15,13 @@ public class Item {
     }
 
     void display() {
-        System.out.println("ID: " + itemId + " -- Item: " + name +
-                " -- Start: Rs." + startPrice + " -- Current Bid: Rs." + currentBid);
+        if (isSold) {
+            System.out.println("ID: " + itemId + " | Item: " + name +
+                    " | Sold for Rs." + currentBid + " | Winner: " + winner);
+        } else {
+            System.out.println("ID: " + itemId + " | Item: " + name +
+                    " | Start: Rs." + startPrice + " | Current Bid: Rs." + currentBid +
+                    " | AVAILABLE");
+        }
     }
 }
