@@ -4,7 +4,7 @@ public class Item {
     double startPrice;
     double currentBid;
     boolean isSold;
-    String winner = null;   // <-- new field
+    String winner = null;   
 
     Item(int itemId, String name, double startPrice) {
         this.itemId = itemId;

@@ -11,7 +11,8 @@ public class Auction {
 
     Item findItem(int id) {
         for (Item item : items) {
-            if (item.itemId == id) return item;
+            if (item.itemId == id) 
+                return item;
         }
         return null;
     }
@@ -35,10 +36,10 @@ public class Auction {
             System.out.println("No bids placed for " + item.name);
         } else {
             item.isSold = true;
-            item.winner = currentWinner.name;   // <-- store winner name in item
+            item.winner = currentWinner.name;  
             currentWinner.balance -= item.currentBid;
             System.out.println("Winner: " + currentWinner.name + " for Rs." + item.currentBid);
-            currentWinner = null;               // <-- reset for next item
+            currentWinner = null;              
         }
     }
 
@@ -48,6 +49,7 @@ public class Auction {
             return;
         }
         System.out.println("\n--- Items ---");
-        for (Item item : items) item.display();
+        for (Item item : items) 
+            item.display();
     }
 }

@@ -5,8 +5,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         Auction auction = new Auction();
 
-        Bidder b1 = new Bidder("Alice", 50000);
-        Bidder b2 = new Bidder("Bob", 40000);
+        Bidder b1 = new Bidder("Mihir", 50000);
+        Bidder b2 = new Bidder("Vishad", 50000);
+        Bidder b3 = new Bidder("Mithun", 50000);
 
         int itemCounter = 1;
         int choice;
@@ -38,13 +39,13 @@ public class Main {
                     auction.showItems();
                     System.out.print("Item ID: ");
                     int id = sc.nextInt();
-                    System.out.print("Bidder (1=Alice, 2=Bob): ");
+                    System.out.print("Bidder (1=Mihir, 2=Vishad, 3=Mithun): ");
                     int b = sc.nextInt();
                     System.out.print("Bid Amount: ");
                     double amt = sc.nextDouble();
 
                     Item item = auction.findItem(id);
-                    Bidder bidder = (b == 1) ? b1 : b2;
+                    Bidder bidder = (b == 1) ? b1 : (b == 2) ? b2 : b3;
 
                     if (item == null) System.out.println("Item not found!");
                     else auction.placeBid(item, bidder, amt);
